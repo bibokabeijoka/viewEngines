@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
+    <title><%= sigmas %></title>
     <style>
         :root {
             --rosa-claro: #ff96a8;
@@ -51,7 +51,7 @@
             margin: 0 auto;
         }
 
-        .intro, .timeline {
+        .intro, .timeline, .galeria {
             background-color: var(--rosa-escuro);
             padding: 15px;
             border-radius: 10px;
@@ -69,6 +69,23 @@
             border-radius: 8px;
         }
 
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            text-align: center;
+        }
+
+        .galeria img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .galeria p {
+            margin-top: 5px;
+            font-size: 14px;
+        }
+
         footer {
             text-align: center;
             margin-top: 30px;
@@ -80,12 +97,12 @@
 
     <!-- Navbar -->
     <nav>
-        <h1><%= title %></h1>
+        <h1><%= titulo %></h1>
         <div class="icon">☭</div>
     </nav>
 
     <header>
-        <h1><%= title %></h1>
+        <h1><%= cabecalho %></h1>
     </header>
 
     <main>
@@ -94,9 +111,39 @@
             <p><%= descricao %></p>
         </section>
 
+        <section class="galeria">
+            <div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Vladimir_Lenin.jpg" alt="Lenin">
+                <p>Lenin</p>
+            </div>
+            <div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Joseph_Stalin.jpg" alt="Stalin">
+                <p>Stalin</p>
+            </div>
+            <div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Karl_Marx_001.jpg" alt="Marx">
+                <p>Marx</p>
+            </div>
+            <div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Friedrich_Engels_portrait.jpg" alt="Engels">
+                <p>Engels</p>
+            </div>
+        </section>
+
+        <section class="timeline">
+            <h2>Principais Eventos</h2>
+            <ul>
+                <% eventos.forEach(evento => { %>
+                    <li>
+                        <span><%= evento.ano %>:</span> <%= evento.texto %>
+                    </li>
+                <% }) %>
+            </ul>
+        </section>
+    </main>
 
     <footer>
-       
+        <p>&copy; <%= ano %></p>
     </footer>
 
 </body>

@@ -38,6 +38,17 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
+        .nav-links a {
+            color: white;
+            margin-left: 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
         header {
             text-align: center;
             background-color: var(--roxinho);
@@ -81,7 +92,10 @@
     <!-- Navbar -->
     <nav>
         <h1><%= title %></h1>
-        <div class="icon">☭</div>
+        <div class="nav-links">
+            <a href="/">Início</a>
+            <a href="/sigmas">Sigmas</a>
+        </div>
     </nav>
 
     <header>
@@ -93,10 +107,9 @@
             <h2>O que foi a Revolução Russa?</h2>
             <p><%= descricao %></p>
         </section>
-
+    </main>
 
     <footer>
-       
     </footer>
 
 </body>
